@@ -1,0 +1,4 @@
+http://188.245.16.94 {
+	root * /srv/yigit.dev/site
+	file_server
+}

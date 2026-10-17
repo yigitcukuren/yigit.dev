@@ -1,0 +1,22 @@
+yigit.dev {
+	root * /srv/yigit.dev/site
+	encode zstd gzip
+	file_server
+}
+
+www.yigit.dev {
+	redir https://yigit.dev{uri} permanent
+}
+
+s.yigit.dev {
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Robots-Tag "noindex, nofollow"
+		>Set-Cookie "(.*)" "$1; Secure"
+	}
+	respond /robots.txt <<ROBOTS
+		User-agent: *
+		Allow: /
+		ROBOTS 200
+	reverse_proxy 127.0.0.1:8282
+}

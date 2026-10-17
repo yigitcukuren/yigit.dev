@@ -1,0 +1,14 @@
+yigit.dev {
+	root * /srv/yigit.dev/site
+	encode zstd gzip
+	file_server
+}
+
+www.yigit.dev {
+	redir https://yigit.dev{uri} permanent
+}
+
+http://188.245.16.94 {
+	root * /srv/yigit.dev/site
+	file_server
+}
