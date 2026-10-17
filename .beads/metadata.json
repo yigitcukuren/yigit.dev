@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "yigit_dev",
+  "project_id": "58f5cbce-157e-4274-a6ad-d533bf7d9935"
+}
